@@ -654,6 +654,79 @@
     filter: drop-shadow(0 0 18px rgba(204,17,17,0.75)) drop-shadow(0 0 36px rgba(204,17,17,0.4)) drop-shadow(0 0 8px rgba(255,255,255,0.5));
   }
 
+
+  /* ── FINANCING SECTION ── */
+  .financing-section {
+    background: #F0F4F8;
+    padding: 80px 0;
+    border-top: 4px solid #CC1111;
+  }
+  .financing-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .fin-list {
+    list-style: none;
+    padding: 0; margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .fin-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .fin-check {
+    background: #CC1111;
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.85rem;
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .fin-list strong { display:block; color:#1A2E45; font-size:0.97rem; margin-bottom:3px; }
+  .fin-list p { color:#4A5568; font-size:0.85rem; margin:0; }
+  .financing-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .financing-banner img { max-width: 100%; border-radius: 8px; }
+  .fin-disclaimer {
+    font-size: 0.7rem;
+    color: #888;
+    text-align: center;
+    max-width: 280px;
+    margin: 0;
+  }
+  @media(max-width:960px) {
+    .financing-inner { grid-template-columns: 1fr; gap: 32px; }
+    .financing-banner { order: -1; }
+  }
+
+
+  /* Payment icons in step 5 */
+  .pay-icons { display:flex; gap:10px; justify-content:center; margin-top:10px; }
+  .pay-icon { font-size:1.4rem; }
+  /* 5-step grid */
+  @media(min-width:961px){
+    .steps { grid-template-columns: repeat(5,1fr); }
+  }
+
+
+  .nav-financing { color: rgba(255,255,255,0.7) !important; }
+  .nav-financing:hover { color: #CC1111 !important; }
+
 </style>
 </head>
 <body>
@@ -676,6 +749,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#work">Our Work</a></li>
     <li><a href="#process">Process</a></li>
+    <li><a href="#financing" class="nav-financing">Financing</a></li>
     <li><a href="tel:2109338032" class="nav-cta">📞 (210) 933-8032</a></li>
   </ul>
 </nav>
@@ -841,7 +915,7 @@
   <div class="process-hd">
     <div class="sec-label">How It Works</div>
     <h2>Simple. Honest. <em>Stress-Free.</em></h2>
-    <p>Our clear four-step process means you always know exactly what to expect.</p>
+    <p>Our clear five-step process means you always know exactly what to expect.</p>
   </div>
   <div class="steps">
     <div class="step">
@@ -856,13 +930,45 @@
     </div>
     <div class="step">
       <div class="step-n">3</div>
+      <h3>Discuss Payment Options</h3>
+      <p>We walk you through all payment options — cash, check, card, or financing through Acorn Finance — before any work begins.</p>
+    </div>
+    <div class="step">
+      <div class="step-n">4</div>
       <h3>Scheduled Repair</h3>
       <p>Our team works quickly and cleanly — minimal disruption to your home and daily routine.</p>
     </div>
     <div class="step">
-      <div class="step-n">4</div>
+      <div class="step-n">5</div>
       <h3>Warranty &amp; Follow-Up</h3>
       <p>Every repair is backed by our lifetime transferable warranty. We stand behind every job.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FINANCING ══ -->
+<section class="financing-section" id="financing">
+  <div class="container" style="text-align:center;">
+    <div class="sec-label">Flexible Payment Options</div>
+    <h2>We Now Offer <em>Financing</em></h2>
+    <p style="color:#4A5568;max-width:560px;margin:0 auto 36px;font-size:0.97rem;">Don't let budget hold back your home's safety. Apply in minutes and get affordable payment options from multiple lenders — no obligation.</p>
+
+    <div class="financing-inner">
+      <!-- Left: benefits -->
+      <div class="financing-benefits">
+        <ul class="fin-list">
+          <li><span class="fin-check">✓</span><div><strong>Quick pre-qualification</strong><p>Check your options in minutes with no impact to your credit score.</p></div></li>
+          <li><span class="fin-check">✓</span><div><strong>Multiple lenders</strong><p>Get offers from several lenders so you can choose what works best.</p></div></li>
+          <li><span class="fin-check">✓</span><div><strong>Flexible terms</strong><p>Low monthly payments tailored to your budget and timeline.</p></div></li>
+          <li><span class="fin-check">✓</span><div><strong>Fast decisions</strong><p>Get approved and move forward with your repair without delay.</p></div></li>
+        </ul>
+      </div>
+
+      <!-- Right: Acorn banner -->
+      <div class="financing-banner">
+        <a href="https://www.acornfinance.com/pre-qualify/?d=HGXF7&utm_medium=web_pre_qual_banner" target="_blank" rel="noopener noreferrer"><img id="acornBanner" style="margin: 10px; padding: 1px; border: 1px solid black; border-radius: 5px;" src="https://fs.acornfinance.com/banners/acorn-finance-banner-easy-payment-options-vertical-medium.png" alt="Acorn Finance apply and get affordable payment options from multiple lenders" longdesc="false"></a>
+        <p class="fin-disclaimer">Financing provided by Acorn Finance. Nexus Foundation Solutions is not a lender. Credit approval required.</p>
+      </div>
     </div>
   </div>
 </section>
